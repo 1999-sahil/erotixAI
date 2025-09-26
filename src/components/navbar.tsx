@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { navLinks } from "../constant/navLinks";
 import Logo from "./logo";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <nav
@@ -15,20 +15,24 @@ function Navbar() {
         borderImage:
           "repeating-linear-gradient(to right, #2F2F2F 0 5px, transparent 5px 10px) 1",
       }}
-      className="flex items-center justify-between px-[40px] py-[16px] md:px-[120px] md:py-[24px] border-b border-dashed border-[#2F2F2F]"
+      className="flex items-center justify-between px-[20px] py-[16px] md:px-[120px] md:py-[24px] border-b border-dashed border-[#2F2F2F]"
     >
       {/** logo and links */}
       <div className="flex items-center gap-[72px]">
         <Logo />
         <div className="hidden md:flex gap-[24px]">
-          {navLinks.map((link) => (
-            <Link
+          {navLinks.map((link, index) => (
+            <NavLink
               to={link.href}
               key={link.href}
-              className="text-white text-center font-redhat text-[16px] font-medium leading-[22px] -tracking-[0.18px] hover:text-[#FAA7E0] transition"
+              className={({ isActive }) =>
+                `text-white text-center font-redhat text-[16px] font-medium leading-[22px] -tracking-[0.18px] transition
+             ${isActive ? "text-[#FAA7E0]" : "hover:text-[#FAA7E0]"}`
+              }
+              end={index === 0} // makes "Home" active by default when at "/"
             >
               {link.title}
-            </Link>
+            </NavLink>
           ))}
         </div>
       </div>
@@ -95,17 +99,30 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white dark:bg-gray-900 flex flex-col items-center md:hidden shadow-md">
+        <div className="absolute top-16 left-0 w-full bg-black min-h-screen flex flex-col items-center md:hidden shadow-md z-50 p-6">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="py-3 w-full text-center border-b border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="py-3 w-full text-start text-white font-redhat font-medium hover:text-[#EE46BC]"
               onClick={() => setIsOpen(false)}
             >
               {link.title}
             </a>
           ))}
+          <div className="w-full h-full flex flex-col rounded-[8px] bg-[#EE46Bc] font-redhat text-black p-2 mt-6">
+            <span className="text-xs bg-black text-[#EE46BC] rounded-full px-2 py-1 w-fit">
+              JOIN NOW
+            </span>
+            <h2>Create Your Account</h2>
+            <button className="rounded-[8px] w-[98%] py-[6px] mt-5 mx-auto text-center whitespace-nowrap bg-white border-[#EAECF0] font-redhat font-medium text-[16px] leading-[22px] -tracking-[0.18px] text-black cursor-pointer hover:text-[#121212] hover:opacity-95 transition">
+              Get started for free
+            </button>
+            <span className="text-center mb-2 mt-1">
+              Already a member? <strong className="underline">Login</strong>
+            </span>
+            <p className="text-xs">*No credit card required</p>
+          </div>
         </div>
       )}
     </nav>
