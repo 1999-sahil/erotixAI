@@ -1,8 +1,10 @@
+import { testimonial } from "../../constant/testimonial"
 import SectionSubheading from "../sectionSubheading"
+import Carousal from "./carousal"
 
 function Testimonials() {
   return (
-    <div className="my-[40px] lg:my-[60px]" >
+    <div className="my-[40px] lg:my-[80px] space-y-[40px] lg:space-y-[60px]">
       {/** hading and desc */}
       <div className="flex flex-col items-start lg:items-center justify-center w-full gap-2">
         <SectionSubheading subheading="Testimonials" />
@@ -14,7 +16,9 @@ function Testimonials() {
         </p>
       </div>
 
-      {/** progression */}
+      <div>
+        <Carousal testimonials={testimonial} />
+      </div>
     </div>
   )
 }

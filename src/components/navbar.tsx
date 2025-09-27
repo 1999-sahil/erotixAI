@@ -26,7 +26,7 @@ function Navbar() {
               to={link.href}
               key={link.href}
               className={({ isActive }) =>
-                `text-white text-center font-redhat text-[16px] font-medium leading-[22px] -tracking-[0.18px] transition
+                `text-center font-redhat text-[16px] font-medium leading-[22px] -tracking-[0.18px] transition
              ${isActive ? "text-[#FAA7E0]" : "hover:text-[#FAA7E0]"}`
               }
               end={index === 0} // makes "Home" active by default when at "/"
@@ -76,18 +76,18 @@ function Navbar() {
           className="focus:outline-none cursor-pointer"
         >
           <div
-            className="w-6 h-0.5 bg-[#EE46BC] mb-1 transition-all duration-300"
+            className="w-6 h-0.5 bg-primary mb-1 transition-all duration-300"
             style={{
               transform: isOpen ? "rotate(45deg) translateY(8px)" : "rotate(0)",
             }}
           ></div>
           <div
-            className={`w-6 h-0.5 bg-[#EE46BC] mb-1 transition-all duration-300 ${
+            className={`w-6 h-0.5 bg-primary mb-1 transition-all duration-300 ${
               isOpen ? "opacity-0" : "opacity-100"
             }`}
           ></div>
           <div
-            className="w-6 h-0.5 bg-[#EE46BC] transition-all duration-300"
+            className="w-6 h-0.5 bg-primary transition-all duration-300"
             style={{
               transform: isOpen
                 ? "rotate(-45deg) translateY(-8px)"
@@ -99,29 +99,29 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-black min-h-screen flex flex-col items-center md:hidden shadow-md z-50 p-6">
+        <div className="absolute top-18 left-0 w-full bg-[#050505] min-h-screen flex flex-col items-center md:hidden shadow-md z-50 p-6">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="py-3 w-full text-start text-white font-redhat font-medium hover:text-[#EE46BC]"
+              className="py-3 w-full text-start text-white font-redhat font-medium hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
               {link.title}
             </a>
           ))}
-          <div className="w-full h-full flex flex-col rounded-[8px] bg-[#EE46Bc] font-redhat text-black p-2 mt-6">
+          <div className="w-full h-full flex flex-col rounded-[8px] bg-[#EE46BC1A] font-redhat text-black p-2 mt-20">
             <span className="text-xs bg-black text-[#EE46BC] rounded-full px-2 py-1 w-fit">
               JOIN NOW
             </span>
-            <h2>Create Your Account</h2>
+            <h2 className="text-primary">Create Your Account</h2>
             <button className="rounded-[8px] w-[98%] py-[6px] mt-5 mx-auto text-center whitespace-nowrap bg-white border-[#EAECF0] font-redhat font-medium text-[16px] leading-[22px] -tracking-[0.18px] text-black cursor-pointer hover:text-[#121212] hover:opacity-95 transition">
               Get started for free
             </button>
-            <span className="text-center mb-2 mt-1">
+            <span className="text-center mb-2 mt-1 text-primary">
               Already a member? <strong className="underline">Login</strong>
             </span>
-            <p className="text-xs">*No credit card required</p>
+            <p className="text-xs text-white/80">*No credit card required</p>
           </div>
         </div>
       )}

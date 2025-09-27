@@ -10,7 +10,7 @@ function CTXSection() {
       <div className="flex flex-col gap-[12px] w-full">
         <div className="text-white text-center whitespace-nowrap text-[34px] lg:text-[68px] font-redhat font-semibold leading-[120%]">
           Your AI Companion <br />
-          for Romance & <span className="text-[#EE46BC]">Desire</span>
+          for Romance & <span className="text-primary">Desire</span>
         </div>
         <p className="w-full lg:w-[680px] font-redhat font-normal text-[16px] lg:text-[20px] leading-[28px] -tracking-[2%] text-center text-white">
           Experience conversations that adapt to your fantasies, remember your
@@ -32,7 +32,7 @@ function CTXSection() {
             />
           </svg>
         </span>
-        <span className="absolute w-fit h-fit top-[6%] left-2 lg:-left-[2%] lg:top-[8%]">
+        <span className="absolute w-fit h-fit top-[6%] left-2 lg:-left-[2%] lg:top-[8%] animate-bounce transition duration-300">
           <svg
             width="17"
             height="19"
@@ -48,7 +48,7 @@ function CTXSection() {
             />
           </svg>
         </span>
-        <span className="absolute w-fit h-fit left-0 top-[90%] lg:-left-[6%] lg:top-[56%]">
+        <span className="absolute w-fit h-fit left-0 top-[90%] lg:-left-[6%] lg:top-[56%]  animate-pulse transition-all duration-200">
           <svg
             width="20"
             height="20"
@@ -81,7 +81,7 @@ function CTXSection() {
         </span>
 
         {/** right */}
-        <span className="absolute w-fit h-fit right-[7%] top-[10%]">
+        <span className="absolute w-fit h-fit right-[7%] top-[10%] animate-bounce transition-all duration-200 ">
           <svg
             width="12"
             height="12"
@@ -113,7 +113,7 @@ function CTXSection() {
             />
           </svg>
         </span>
-        <span className="absolute w-fit h-fit -right-[22%] top-[48%]">
+        <span className="absolute w-fit h-fit -right-[22%] top-[48%]  animate-pulse transition-all duration-150">
           <svg
             width="42"
             height="40"
@@ -143,7 +143,7 @@ function CTXSection() {
             />
           </svg>
         </span>
-        <span className="absolute w-fit h-fit -right-[40%] top-[90%]">
+        <span className="absolute w-fit h-fit -right-[40%] top-[90%]  animate-bounce transition-all duration-200">
           <svg
             width="9"
             height="10"

@@ -6,7 +6,7 @@ import progression from "../assets/progress.svg";
 import { progress } from "../constant/loveProgression";
 
 function LoveProgression() {
-  const [active, setActive] = useState<number | null>(null);
+  const [active, setActive] = useState<number | null>(0);
   return (
     <div className="my-[40px] lg:my-[60px]" >
       {/** hading and desc */}
@@ -43,7 +43,7 @@ function LoveProgression() {
               {/* Border left indicator */}
               <div
                 className={`w-[4px] transition-colors ${
-                  active === idx ? "bg-[#EE46BC]" : "bg-[#EAECF0]"
+                  active === idx ? "bg-primary" : "bg-[#EAECF0]"
                 }`}
               />
 

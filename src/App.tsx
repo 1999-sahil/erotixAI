@@ -19,7 +19,6 @@ function App() {
           <KeyFeatures />
           <LoveProgression />
           <Testimonials />
-
           <FAQ />
           <Footer />
         </section>
