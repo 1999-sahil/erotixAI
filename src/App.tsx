@@ -5,6 +5,8 @@ import KeyFeatures from './components/keyFeatures'
 import LoveProgression from './components/loveProgression'
 import Testimonials from './components/testimonial/testimonials'
 import Footer from './components/footer'
+import FAQ from './components/faq/faq'
+
 
 function App() {
 
@@ -18,6 +20,7 @@ function App() {
           <LoveProgression />
           <Testimonials />
 
+          <FAQ />
           <Footer />
         </section>
       </main>

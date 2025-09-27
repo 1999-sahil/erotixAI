@@ -1,31 +1,133 @@
-import Logo from "./logo"
-import PrimaryBtn from "./primaryBtn"
+import { footerLinks } from "../constant/footer";
+import Logo from "./logo";
+import PrimaryBtn from "./primaryBtn";
 
 function Footer() {
   return (
-    <div>
-        {/** footer logo and email/newsletter */}
-        <div className="flex flex-col lg:flex-row lg:justify-between gap-[24px] lg:gap-[32px]">
-            <div className="w-full">
-                <Logo />
-                <p className="w-full max-w-[600px] font-normal text-[12px] lg:text-[18px] leading-[24px] -tracking-[0.26px]">
-                    Discover AI companions built to understand your emotions and desires, remember your intimate moments, and evolve with every conversation—creating a safe, passionate, and unforgettable connection just for you.
-                </p>
-            </div>
-            <div className="w-full">
-                <div className="flex items-center gap-[8px] w-full">
-                    <input type="email" placeholder="Enter your email" className="w-full lg:max-w-[70%] px-[12px] py-[8px] lg:px-[20px] lg:py-[13px] text-[12px] lg:text-[16px] leading-[22px] -tracking-[0.18px] rounded-[12px] text-[#697586] bg-white font-medium"  />
-                    <PrimaryBtn text="Subscribe" href="/" />
-                </div>
-                <p className="font-normal text-[12px] lg:text-[16px] leading-[22px] -tracking-[0.18px] text-[F9FAFB]">
-                    By submitting your email address, you agree to our Privacy policy and Terms of Service. You can unsubscribe any time via the link in your email.
-                </p>
-            </div>
+    <div className="mt-[32px] lg:mt-[120px]">
+      {/** footer logo and email/newsletter */}
+      <div className="flex flex-col lg:flex-row lg:justify-between gap-[24px]">
+        <div className="w-full max-w-[657px]">
+          <Logo />
+          <p className="w-full font-normal mt-[16px] text-[12px] lg:text-[16px] leading-[24px] -tracking-[0.26px]">
+            Discover AI companions built to understand your emotions and
+            desires, remember your intimate moments, and evolve with every
+            conversation—creating a safe, passionate, and unforgettable
+            connection just for you.
+          </p>
         </div>
+        <div className="w-full max-w-[527px] space-y-2">
+          <div className="flex items-center justify-between gap-[8px] w-full">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="w-full px-[12px] py-[8px] lg:px-[20px] lg:py-[13px] text-[12px] lg:text-[16px] leading-[22px] -tracking-[0.18px] rounded-[12px] text-[#697586] bg-white font-medium"
+            />
+            <PrimaryBtn text="Subscribe" href="/" />
+          </div>
+          <p className="font-normal text-[12px] lg:text-[14px] leading-[22px] -tracking-[0.18px] text-[F9FAFB]">
+            By submitting your email address, you agree to our Privacy policy
+            and Terms of Service. You can unsubscribe any time via the link in
+            your email.
+          </p>
+        </div>
+      </div>
 
-        {/** links */}
+      {/** links */}
+      <div className="border-y-[0.75px] border-[#475467] py-8 lg:py-12 mt-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-[24px] lg:gap-0">
+          {footerLinks.map((data) => (
+            <div key={data.title} className="space-y-[16px]">
+              <h2 className="font-medium text-[20px] lg:text-[24px] leading-[28px] -tracking-[3%]">
+                {data.title}
+              </h2>
+              <ul className="space-y-[12px]">
+                {data.links.map((link, index) => (
+                  <li
+                    key={index}
+                    className="font-medium text-[14px] lg:text-[16px] leading-[22px] -tracking-[0.18px] cursor-pointer hover:text-[#FAA7E0]"
+                  >
+                    {link}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          <div className="space-y-[16px]">
+            <h2 className="font-medium text-[20px] lg:text-[24px] leading-[28px] -tracking-[3%]">
+              Social Links
+            </h2>
+            <span className="grid grid-cols-4 w-fit gap-2 lg:gap-4">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 0C24.8366 0 32 7.16344 32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16C2.57703e-07 7.16344 7.16344 2.5772e-07 16 0ZM9.33301 9.33301H8.66699V22.667H9.33301V23.333H22.667V22.667H23.333V9.33301H22.667V8.66699H9.33301V9.33301ZM12.667 21.333H10.667V14H12.667V21.333ZM16.667 14.667H17.333V14H20V14.667H20.667V21.333H18.667V16H16.667V21.333H14.667V14H16.667V14.667ZM12.667 13.333H10.667V11.333H12.667V13.333Z"
+                  fill="#F2F4F7"
+                />
+              </svg>
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 0C24.8366 0 32 7.16344 32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16C2.57703e-07 7.16344 7.16344 2.5772e-07 16 0ZM16 10.1328C16 10.1328 10.6629 10.1328 9.33203 10.499C8.59768 10.7005 8.01951 11.2948 7.82324 12.0488C7.46671 13.4154 7.4668 16.2666 7.4668 16.2666C7.4668 16.2769 7.46734 19.1202 7.82324 20.4844C8.01951 21.2384 8.59769 21.8326 9.33203 22.0342C10.6629 22.4003 16 22.4004 16 22.4004C16.0104 22.4004 21.3384 22.3999 22.668 22.0342C23.4023 21.8325 23.9805 21.2383 24.1768 20.4844C24.5327 19.1202 24.5332 16.2769 24.5332 16.2666C24.5332 16.2666 24.5334 13.4154 24.1768 12.0488C23.9805 11.2949 23.4023 10.7006 22.668 10.499C21.3384 10.1332 16.0104 10.1328 16 10.1328Z"
+                  fill="#F2F4F7"
+                />
+                <path
+                  d="M14.4 19.2V13.8667L18.6667 16.5335L14.4 19.2Z"
+                  fill="#F2F4F7"
+                />
+              </svg>
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 0C24.8366 0 32 7.16344 32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16C2.57703e-07 7.16344 7.16344 2.5772e-07 16 0ZM17.9688 8C15.0821 8.00001 14.0664 9.45517 14.0664 11.9023V13.7031H12.2666V16.7031H14.0664V25.4072H17.668V16.7031H20.0703L20.3887 13.7031H17.668L17.6719 12.2012C17.6719 11.4191 17.7466 11 18.8701 11H20.3721V8H17.9688Z"
+                  fill="#F2F4F7"
+                />
+              </svg>
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 0C24.8366 0 32 7.16344 32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16C2.57703e-07 7.16344 7.16344 2.5772e-07 16 0ZM15.999 7.4668C13.6833 7.4668 13.3922 7.47715 12.4824 7.51855C11.574 7.56016 10.9537 7.70401 10.4111 7.91504C9.84995 8.13298 9.37368 8.42402 8.89941 8.89844C8.42474 9.37275 8.13273 9.84908 7.91406 10.4102C7.70255 10.9529 7.55846 11.5735 7.51758 12.4814C7.47688 13.3915 7.4668 13.6827 7.4668 16C7.4668 18.3174 7.47731 18.6075 7.51855 19.5176C7.56033 20.426 7.70419 21.0463 7.91504 21.5889C8.13314 22.15 8.42408 22.6264 8.89844 23.1006C9.37258 23.5753 9.84926 23.867 10.4102 24.085C10.9531 24.296 11.5732 24.4398 12.4814 24.4814C13.3917 24.5229 13.6826 24.5332 16 24.5332C18.3174 24.5332 18.6074 24.5229 19.5176 24.4814C20.426 24.4398 21.0469 24.296 21.5898 24.085C22.1508 23.867 22.6265 23.5752 23.1006 23.1006C23.5752 22.6263 23.8663 22.1499 24.085 21.5889C24.2947 21.0461 24.4388 20.4257 24.4814 19.5176C24.5223 18.6076 24.5332 18.3173 24.5332 16C24.5332 13.6825 24.5223 13.3916 24.4814 12.4814C24.4388 11.573 24.2947 10.9527 24.085 10.4102C23.8663 9.849 23.5752 9.37269 23.1006 8.89844C22.6259 8.42377 22.1507 8.13282 21.5889 7.91504C21.045 7.70408 20.4248 7.56016 19.5166 7.51855C18.6065 7.47714 18.3164 7.4668 15.999 7.4668Z"
+                  fill="#F2F4F7"
+                />
+                <path
+                  d="M15.2356 9.00391C15.4627 9.00355 15.7166 9.00391 16.0012 9.00391C18.2792 9.00391 18.5498 9.01282 19.4495 9.05371C20.2812 9.09179 20.7327 9.23088 21.0334 9.34766C21.4315 9.50229 21.7155 9.6868 22.0139 9.98535C22.3126 10.284 22.4976 10.5686 22.6526 10.9668C22.7694 11.2672 22.9087 11.7188 22.9465 12.5508C22.9874 13.4503 22.9963 13.7207 22.9963 15.998C22.9963 18.2754 22.9874 18.5458 22.9465 19.4453C22.9085 20.2772 22.7694 20.7289 22.6526 21.0293C22.4979 21.4275 22.3126 21.7113 22.0139 22.0098C21.7154 22.3083 21.4317 22.4928 21.0334 22.6475C20.7331 22.7648 20.2812 22.9033 19.4495 22.9414C18.55 22.9823 18.2792 22.9912 16.0012 22.9912C13.723 22.9912 13.4522 22.9823 12.553 22.9414C11.721 22.903 11.269 22.7643 10.968 22.6475C10.5698 22.4928 10.2852 22.3075 9.98657 22.0088C9.68807 21.7102 9.50287 21.4266 9.3479 21.0283C9.23111 20.7279 9.09181 20.2762 9.05396 19.4443C9.01307 18.5449 9.00513 18.2746 9.00513 15.9961C9.00513 13.7174 9.01307 13.4483 9.05396 12.5488C9.092 11.7168 9.2311 11.2647 9.3479 10.9639C9.5025 10.5659 9.68814 10.2819 9.98657 9.9834C10.2852 9.68475 10.5698 9.49974 10.968 9.34473C11.2688 9.22739 11.721 9.08803 12.553 9.0498C13.3399 9.01426 13.6455 9.00373 15.2356 9.00195V9.00391ZM16.0002 11.6182C13.5804 11.6185 11.6184 13.5801 11.6184 16C11.6184 18.4201 13.5811 20.3818 16.0012 20.3818C18.4211 20.3816 20.3821 18.42 20.3821 16C20.3821 13.5799 18.4203 11.6182 16.0002 11.6182ZM20.4514 10.4268C19.9353 10.4791 19.5317 10.9143 19.5315 11.4443C19.5315 12.0097 19.9906 12.4688 20.5559 12.4688C21.1212 12.4687 21.5803 12.0097 21.5803 11.4443C21.5801 10.8792 21.1211 10.4209 20.5559 10.4209L20.4514 10.4268Z"
+                  fill="#F2F4F7"
+                />
+                <path
+                  d="M16.0008 13.1558C17.5717 13.1558 18.8453 14.4292 18.8453 16.0002C18.8453 17.5711 17.5717 18.8447 16.0008 18.8447C14.4298 18.8447 13.1564 17.5711 13.1564 16.0002C13.1564 14.4292 14.4298 13.1558 16.0008 13.1558V13.1558Z"
+                  fill="#F2F4F7"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <span className="py-6 font-normal text-[12px] lg:text-[18px] leading-[24px] text-[#F2F4F7] flex items-center justify-center -tracking-[0.26px]">
+        @2025 Company, All rights reserved
+      </span>
     </div>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
