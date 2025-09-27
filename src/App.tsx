@@ -1,17 +1,26 @@
 import './App.css'
 import Navbar from './components/navbar'
 import ShowcaseSection from './components/hero/showcaseSection'
+import KeyFeatures from './components/keyFeatures'
+import LoveProgression from './components/loveProgression'
+import Testimonials from './components/testimonial/testimonials'
+import Footer from './components/footer'
 
 function App() {
 
   return (
     <>
-      <div className='bg-black w-full min-h-screen overflow-hidden'>
+      <main className='bg-[#050505] text-white font-redhat w-full min-h-screen overflow-hidden'>
         <Navbar />
-        <section className='px-[10px] md:px-[120px]'>
+        <section className='px-[20px] md:px-[120px]'>
           <ShowcaseSection />
+          <KeyFeatures />
+          <LoveProgression />
+          <Testimonials />
+
+          <Footer />
         </section>
-      </div>
+      </main>
     </>
   )
 }

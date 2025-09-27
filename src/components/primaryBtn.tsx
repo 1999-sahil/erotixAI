@@ -40,7 +40,7 @@ export default function PrimaryBtn({ text, href }: PrimaryBtnProps) {
         {/* Button 1 */}
         <button
           onClick={createRipple}
-          className="relative overflow-hidden px-[12px] py-[8px] lg:px-[20px] lg:py-[13px] cursor-pointer font-redhat font-medium text-[12px] lg:text-[16px] leading-[22px] -tracking-[0.18px] text-white bg-[#EE46BC] rounded-[12px] border-b border-[#EE46BC]"
+          className="relative overflow-hidden px-[12px] py-[8px] lg:px-[20px] lg:py-[13px] cursor-pointer font-redhat font-medium text-[12px] lg:text-[16px] leading-[22px] -tracking-[0.18px] text-white bg-primary rounded-[12px] border-b border-primary"
         >
           {text}
           {ripples.map((r) => (

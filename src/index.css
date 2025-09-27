@@ -3,6 +3,7 @@
 
 @theme {
   --font-redhat: "Red Hat Display", sans-serif;
+  --color-primary: #EE46BC;
 }
 
 @keyframes ripple {

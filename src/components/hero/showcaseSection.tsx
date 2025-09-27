@@ -3,7 +3,7 @@ import Banner from "../../assets/banner.svg";
 
 function ShowcaseSection() {
   return (
-    <div className="relative w-full h-[900px] pt-[52px]">
+    <div className="relative w-full h-[550px] lg:h-[900px] pt-[52px] ">
       {/** radial gradient */}
       <div className=" w-full flex items-center justify-center">
         <div className="absolute top-[30%] lg:top-[30%] w-[400px] h-[200px] lg:w-[800px] lg:h-[500px] rounded-full bg-[#EE46BC] mix-blend-lighten filter blur-3xl opacity-[35%]"></div>
@@ -15,7 +15,7 @@ function ShowcaseSection() {
       </div>
 
       {/** visual/media banner */}
-      <div className="absolute top-[45%]">
+      <div className="absolute top-[72%] lg:top-[54%]">
         <img src={Banner} alt="banner" className="object-cover" />
       </div>
     </div>
