@@ -2,14 +2,15 @@
 
 import { useState } from "react";
 import SectionSubheading from "./sectionSubheading";
-import progression from "../assets/progress.svg";
+import progression1 from "../assets/progression1.svg";
 import { progress } from "../constant/loveProgression";
+import { motion } from "motion/react";
 
 function LoveProgression() {
   const [active, setActive] = useState<number | null>(0);
   return (
     <div className="my-[40px] lg:my-[60px]" >
-      {/** hading and desc */}
+      {/** heading and desc */}
       <div className="flex flex-col items-start lg:items-center justify-center w-full gap-2">
         <SectionSubheading subheading="Love That Evolves" />
         <h2 className="text-[26px] lg:text-[44px] font-semibold leading-[120%] -tracking-[3%]">
@@ -24,9 +25,18 @@ function LoveProgression() {
       {/** progression */}
       <div className="flex flex-col-reverse lg:flex-row gap-8 lg:justify-between lg:gap-16 mt-10 lg:mt-16">
         <div className="border rounded-[24px] border-[#2F2F2F] p-6 w-full h-[300px] lg:w-1/2 lg:h-[450px]">
-          <img
-            src={progression}
-            alt="love progression"
+          <motion.img
+            key={active}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: 2,
+              ease: [0.25, 0.1, 0.25, 1],
+              
+            }}
+            src={progress[active!]?.mainSvg || progression1} 
+            alt={progress[active!]?.title || "love progression"}
             className="w-full h-full object-fill"
           />
         </div>
