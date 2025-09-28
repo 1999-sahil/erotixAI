@@ -15,7 +15,7 @@ function ShowcaseSection() {
       </div>
 
       {/** visual/media banner */}
-      <div className="absolute top-[72%] lg:top-[54%]">
+      <div className="absolute top-[72%] lg:top-[54%] left-1/2 -translate-x-1/2">
         <img src={Banner} alt="banner" className="object-cover" />
       </div>
     </div>
